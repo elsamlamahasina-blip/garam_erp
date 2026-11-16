@@ -1,0 +1,74 @@
+name: MADURA ERP/EIS — Continuous Integration & Continuous Deployment (CI/CD)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    name: Automated SQA Testing Suite (ISO/IEC/IEEE 29119)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js Runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Project Dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Eksekusi Pekan 1: Smoke Test & Architecture Verification
+        run: node tests/smoke-test.js
+
+      - name: Eksekusi Pekan 2: Master Test Plan & Risk Analysis
+        run: node tests/pekan-2-test-plan.js
+
+      - name: Eksekusi Pekan 4: Decision Table & State Transition
+        run: node tests/pekan-4-decision-table-state.js
+
+      - name: Eksekusi Pekan 5: White-Box Testing (CFG & Cyclomatic Complexity)
+        run: node tests/pekan-5-whitebox-cfg.js
+
+      - name: Eksekusi Pekan 11: UAT Verification & Sign-Off Matrix
+        run: node tests/pekan-11-uat-verification.js
+
+      - name: Eksekusi Pekan 12: Implementation Strategy & Change Management
+        run: node tests/pekan-12-implementation-strategy.js
+
+      - name: Eksekusi Pekan 13: Data Migration ETL & Emergency Rollback
+        run: node tests/pekan-13-etl-migration.js
+
+  build-and-deploy:
+    name: Docker Packaging & Staging Deployment Simulation
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Validate Docker Compose Configuration
+        run: docker compose config
+
+      - name: Build Docker Container Images
+        run: docker compose build --no-cache
+
+      - name: Deploy to Staging Verification
+        run: |
+          echo "=========================================================="
+          echo "   STAGING DEPLOYMENT BERHASIL DIPROSES SECARA OTOMATIS"
+          echo "   Target Server: VPS Ubuntu 24.04 LTS (Nginx Reverse Proxy)"
+          echo "   Port Servis  : 8080"
+          echo "=========================================================="
