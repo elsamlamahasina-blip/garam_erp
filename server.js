@@ -10,7 +10,7 @@ import fs from 'fs';
 import path from 'path';
 import os from 'os';
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 const DATA_FILE = path.join(process.cwd(), 'database', 'umkm_store.json');
 
 function getLocalIp() {
@@ -771,8 +771,56 @@ const server = http.createServer((req, res) => {
       req.on('end', () => {
         try {
           const item = JSON.parse(body);
+          const errors = [];
+
+          // 1. Equivalence Partitioning: Nama Usaha & Pemilik Wajib
+          if (!item.name || typeof item.name !== 'string' || item.name.trim().length < 3) {
+            errors.push('Nama usaha wajib diisi (minimal 3 karakter).');
+          }
+          if (!item.owner_name || typeof item.owner_name !== 'string' || item.owner_name.trim().length < 3) {
+            errors.push('Nama pemilik wajib diisi (minimal 3 karakter).');
+          }
+
+          // 2. Equivalence Partitioning: Kategori Usaha Terdaftar
+          const validCategories = [
+            'petambak_garam', 'pengolahan_garam', 'garam_konsumsi',
+            'rengginang_ikan', 'kerupuk_ikan', 'olahan_ikan', 'olahan_udang', 'terasi_dan_hasil_laut'
+          ];
+          if (!item.category || !validCategories.includes(item.category)) {
+            errors.push('Kategori usaha tidak valid atau tidak terdaftar dalam sistem.');
+          }
+
+          // 3. Equivalence Partitioning & BVA: Format Nomor Telepon
+          if (!item.phone || typeof item.phone !== 'string') {
+            errors.push('Nomor telepon/kontak wajib diisi.');
+          } else {
+            const cleanPhone = item.phone.replace(/[-\s]/g, '');
+            if (/[a-zA-Z]/.test(item.phone)) {
+              errors.push('Nomor telepon tidak boleh mengandung karakter huruf.');
+            } else if (!/^\d{10,15}$/.test(cleanPhone)) {
+              errors.push('Nomor telepon harus berformat angka antara 10 sampai 15 digit.');
+            }
+          }
+
+          // 4. Boundary Value Analysis: Batas Geografis Kabupaten Pamekasan
+          // Bounding Box Pamekasan: Latitude [-7.3500, -6.9500], Longitude [113.3000, 113.6500]
+          const lat = Number(item.latitude);
+          const lng = Number(item.longitude);
+          if (isNaN(lat) || lat < -7.3500 || lat > -6.9500) {
+            errors.push(`Latitude (${item.latitude}) berada di luar batas wilayah Kabupaten Pamekasan [-7.3500 s/d -6.9500].`);
+          }
+          if (isNaN(lng) || lng < 113.3000 || lng > 113.6500) {
+            errors.push(`Longitude (${item.longitude}) berada di luar batas wilayah Kabupaten Pamekasan [113.3000 s/d 113.6500].`);
+          }
+
+          // Jika terdapat pelanggaran batas (BVA) atau partisi tidak sah (EP), tolak dengan HTTP 422
+          if (errors.length > 0) {
+            res.writeHead(422, { 'Content-Type': 'application/json' });
+            return res.end(JSON.stringify({ success: false, error: 'Validasi gagal', errors }));
+          }
+
           const newId = umkms.length > 0 ? Math.max(...umkms.map(u => u.id)) + 1 : 1;
-          const isSalt = item.category.includes('garam');
+          const isSalt = item.category ? item.category.includes('garam') : false;
 
           let catLabel = 'Produk Olahan Ikan';
           if (item.category === 'rengginang_ikan') catLabel = 'Rengginang Ikan & Lorjuk';
