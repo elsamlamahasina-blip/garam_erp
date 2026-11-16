@@ -51,3 +51,4 @@ console.log('-------------------------------------------------------------------
 
 if (failCount > 0) process.exit(1);
 else console.log('🎉 VERIFIKASI PIPELINE CI/CD & DOCKER PEKAN 14 DINYATAKAN PASS!');
+

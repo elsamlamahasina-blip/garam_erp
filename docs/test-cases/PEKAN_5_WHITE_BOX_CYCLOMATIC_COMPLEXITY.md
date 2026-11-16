@@ -84,3 +84,4 @@ Artinya, terdapat **9 Jalur Independen (Basis Paths)** yang wajib diuji untuk me
 | **Path 7** | Olahan Laut, Olahan Udang, Skala Mikro | $D_1$(F) $\to D_3$(F) $\to D_5$(F) $\to D_6$(F) $\to D_7$(T) | Susut 3%, Margin 25% |
 | **Path 8** | Garam, Musim Kemarau, Skala Menengah | $D_1$(F) $\to D_3$(T) $\to D_4$(F) $\to D_8$(T) | Susut 5%, Margin 15% |
 | **Path 9** | Loop kosong / 1 item BOM bahan baku | $D_2$ (Iterasi bahan baku BOM) | Kalkulasi total raw cost akurat |
+

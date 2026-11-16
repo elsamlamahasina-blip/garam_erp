@@ -25,3 +25,4 @@
 | **UAT-05** | Admin Dinas | Memfilter UMKM berdasarkan kecamatan (Tlanakan, Pademawu, Galis) | Peta dan tabel direktori menyaring data sesuai kecamatan terpilih | Filter responsif real-time | **ACCEPTED** |
 | **UAT-06** | Pimpinan | Memantau grafik perbandingan sektor olahan laut vs garam pada EIS | Diagram donat dan bar chart interaktif menyajikan total unit usaha valid | Grafik visual sangat informatif | **ACCEPTED** |
 | **UAT-07** | Pelaku UMKM | Membuka portal SIGARA melalui smartphone via jaringan Wi-Fi lokal | Tata letak UI rapi, mobile-friendly, tombol navigasi bawah mudah ditekan | Tampilan responsif di HP | **ACCEPTED** |
+

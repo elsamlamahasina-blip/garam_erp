@@ -25,3 +25,4 @@ Pengujian Pekan 13 memverifikasi otomasi migrasi data dari format konvensional p
 
 ## 2. Kesimpulan Uji Transisi
 Skrip ETL (`scripts/etl/etl_pipeline.js`) dan *Cutover Checklist* telah memenuhi syarat transisi data tanpa kehilangan integritas (*zero data loss*), siap dilanjutkan ke **Pekan 14: Otomasi Deployment CI/CD (GitHub Actions & Docker)**.
+

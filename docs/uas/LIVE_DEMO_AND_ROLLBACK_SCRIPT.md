@@ -38,3 +38,4 @@ Di hadapan dosen penguji, demonstrasikan simulasi pemulihan bencana sistem:
 node tests/pekan-16-uas-master-runner.js
 ```
 Hasil pada layar terminal akan langsung menunjukkan status kelulusan **15 dari 15 suite pengujian berstatus 100% PASS**!
+

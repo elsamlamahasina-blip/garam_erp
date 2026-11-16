@@ -40,3 +40,4 @@ Pengujian pada Pekan 2 memverifikasi kelengkapan dokumen Master Test Plan dan ak
 
 ## 3. Kesimpulan & Rekomendasi Fase Berikutnya
 Tahapan perencanaan uji coba (Pekan 2) telah memenuhi standar akademik dan industri. Seluruh kriteria masuk (*Entry Criteria*) untuk melangkah ke **Pekan 3: Black-Box Testing (EP & BVA) pada Form & Transaksi** telah terpenuhi.
+

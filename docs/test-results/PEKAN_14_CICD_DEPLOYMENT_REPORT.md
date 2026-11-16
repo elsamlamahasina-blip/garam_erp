@@ -22,3 +22,4 @@ Otomasi deployment Pekan 14 mengonfigurasi alur kerja *Continuous Integration & 
 
 ## 2. Kesimpulan
 Pipeline CI/CD terintegrasi sempurna dengan repositori GitHub dan menjamin bahwa tidak ada kode cacat yang dapat masuk ke lingkungan produksi tanpa melalui verifikasi pengujian otomatis terlebih dahulu.
+

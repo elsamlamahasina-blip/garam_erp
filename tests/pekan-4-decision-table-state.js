@@ -148,3 +148,4 @@ if (failCount > 0) {
 } else {
   console.log('🎉 SELURUH PENGUJIAN PEKAN 4 (DECISION TABLE & STATE TRANSITION) DINYATAKAN PASS!');
 }
+

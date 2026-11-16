@@ -113,3 +113,4 @@ if (process.argv[1].endsWith('etl_pipeline.js')) {
   const result = runEtl(csvFile);
   console.log('HASIL ETL MIGRATION:', result);
 }
+

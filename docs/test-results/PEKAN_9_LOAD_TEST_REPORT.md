@@ -28,3 +28,4 @@ Pengujian beban Pekan 9 mensimulasikan akses konkurensi tinggi pengguna secara b
 
 ## 3. Kesimpulan & Analisis Arsitektur
 Arsitektur modular *SIGARA PAMEKASAN* terbukti memiliki kestabilan tinggi dengan latensi respon rata-rata di bawah 35 milidetik dan throughput melebihi 400 transaksi/detik tanpa terjadi memory leak atau crash pada koneksi konkuren.
+

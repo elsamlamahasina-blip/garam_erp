@@ -134,3 +134,4 @@ Pengujian pada suatu modul dinyatakan selesai jika:
 13. **Pekan 14**: Konfigurasi CI/CD Pipeline GitHub Actions & Docker Staging Deployment.
 14. **Pekan 15**: Laporan Post-Implementation Review (PIR) & Rencana Pemeliharaan Sistem.
 15. **Pekan 16**: Dokumen Evaluasi Akhir Proyek (UAS), Laporan Simulasi Live Rollback & Verifikasi Capstone.
+

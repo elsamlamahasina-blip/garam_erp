@@ -52,3 +52,4 @@ Siklus hidup pemrosesan produk olahan laut (Rengginang Ikan, Kerupuk Ikan, Olaha
 | `PROSES_PRODUKSI` | `KEMBALI_DRAFT` | N/A (Ditolak) | **Invalid (Illegal)** |
 | `SELESAI_PACKING` | `ULANG_PRODUKSI` | N/A (Ditolak) | **Invalid (Illegal)** |
 | `BATAL_REJECTED` | `PAKSA_JUAL` | N/A (Ditolak) | **Invalid (Illegal)** |
+

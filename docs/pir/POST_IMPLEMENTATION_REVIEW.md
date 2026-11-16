@@ -41,3 +41,4 @@ Proyek MADURA ERP/EIS telah berhasil diselesaikan secara tepat waktu, memenuhi s
 | **Backup Storage Offsite** | Penyimpanan snapshot cadangan terenkripsi | Rp 950.000 / tahun |
 | **Dukungan Teknis SQA & DevOps** | Monitoring performa sistem berkala dan update keamanan | Rp 4.800.000 / tahun |
 | **Total Estimasi Anggaran** | Pemeliharaan sistem tahunan terpadu | **Rp 10.000.000 / tahun** |
+

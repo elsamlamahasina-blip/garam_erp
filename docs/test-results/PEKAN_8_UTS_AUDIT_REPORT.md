@@ -35,3 +35,4 @@ Pengujian empiris mencakup verifikasi arsitektur (*Smoke Test*), perancangan *Ma
 
 ## 4. Rekomendasi Menuju Tahap 2 (Pekan 9 s/d Pekan 16 - UAS)
 Seluruh kriteria kelulusan Tahap 1 UTS telah tercapai. Sistem siap melanjutkan pengujian non-fungsional pada Pekan 9 (*Performance & Load Testing 100–500 concurrent users*) dan Pekan 10 (*Security Scanning OWASP Top 10*).
+

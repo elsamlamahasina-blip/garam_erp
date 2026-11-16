@@ -27,3 +27,4 @@
 - **Aktivitas Laboratorium & Praktikum (Pekan 3–15)**: Bobot 50% $\to$ **Nilai: 50.0%**
 - **CPMK 3 (Pekan 16: Evaluasi Akhir Proyek / UAS Capstone)**: Bobot 20% $\to$ **Nilai: 20.0%**
 - **Akumulasi Total**: **100% (Grade A / Nilai Sempurna 100)**
+

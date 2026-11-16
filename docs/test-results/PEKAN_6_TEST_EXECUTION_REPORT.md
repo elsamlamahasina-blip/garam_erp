@@ -30,3 +30,4 @@ Pengujian integrasi antarmuka dan REST API Pekan 6 memverifikasi integritas endp
 6. **TC-API-006**: `POST /api/v1/logout` (Pembersihan Sesi Cookie) $\to$ **200 OK (PASS)**
 7. **TC-API-007**: `GET /peta` (Integritas Halaman Peta Leaflet WebGIS) $\to$ **200 OK (PASS)**
 8. **TC-API-008**: `GET /statistik` (Integritas Visualisasi Chart.js EIS Dashboard) $\to$ **200 OK (PASS)**
+

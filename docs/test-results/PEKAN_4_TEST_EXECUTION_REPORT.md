@@ -32,3 +32,4 @@ Pengujian Pekan 4 memverifikasi logika bisnis penentuan grade kualitas garam rak
 8. **TC-ST-003**: Transisi ilegal melompati produksi langsung ke selesai $\to$ **DITOLAK** — **PASS**
 9. **TC-ST-004**: Transisi mundur ilegal dari produksi ke alokasi $\to$ **DITOLAK** — **PASS**
 10. **TC-ST-005**: Transisi ilegal dari state terminal $\to$ **DITOLAK** — **PASS**
+

@@ -50,3 +50,4 @@ Setelah dilakukan perbaikan validasi pada backend dan pemindahan port ke 8080 gu
 
 ## 3. Catatan Defect & Rekomendasi
 Seluruh defect yang terdeteksi telah didokumentasikan pada `DEFECT_LOG.md` (DEF-001 s/d DEF-004) dan telah diverifikasi tuntas. Modul pendaftaran dan transaksi kini siap diintegrasikan dengan modul **Pekan 4: Advanced Black-Box (Decision Table & State Transition Testing)**.
+

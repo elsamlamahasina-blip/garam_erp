@@ -36,3 +36,4 @@ Berdasarkan analisis graf:
 7. **TC-CFG-PATH-07**: Path 7: Olahan Udang Crispy Skala Mikro (Susut 3%, Margin 25%) $\to$ **PASS**
 8. **TC-CFG-PATH-08**: Path 8: Garam Beryodium Industri Menengah (Susut 5%, Margin 15%) $\to$ **PASS**
 9. **TC-CFG-PATH-09**: Path 9: Iterasi Akumulasi Loop BOM Multi-Bahan Baku $\to$ **PASS**
+

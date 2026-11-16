@@ -24,3 +24,4 @@ Audit keamanan Pekan 10 memindai kerentanan web aplikasi SIGARA Pamekasan terhad
 | **A03: SQL Injection** | Injeksi SQL pada filter parameter | Tidak ada stack trace bocor, parameter disterilkan | **AMAN (PASS)** |
 | **A03: Cross-Site Scripting (XSS)** | Payload HTML script pada form nama/produk | Payload ditangani dengan aman tanpa eksekusi DOM | **AMAN (PASS)** |
 | **A07: Authentication Failures** | Verifikasi atribut session cookie | Menggunakan atribut `SameSite=Lax; Path=/` | **AMAN (PASS)** |
+

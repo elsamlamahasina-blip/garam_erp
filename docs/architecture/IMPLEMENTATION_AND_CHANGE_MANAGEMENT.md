@@ -29,3 +29,4 @@
 - **K — Knowledge**: Workshop tata cara input koordinat GPS mandiri dan pencatatan panen via smartphone.
 - **A — Ability**: Posko pendampingan teknis keliling mahasiswa PjBL Sistem Informasi UIM.
 - **R — Reinforcement**: Apresiasi unit usaha teraktif di portal SIGARA serta integrasi rekomendasi bantuan dinas.
+
