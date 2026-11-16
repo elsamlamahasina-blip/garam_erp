@@ -2,41 +2,25 @@
 **Program**: Project-Based Learning (PjBL) 16 Pekan  
 **Mata Kuliah**: Manajemen dan Proyek Sistem Informasi (MKB020204)  
 **Institusi**: Universitas Islam Madura — Semester Ganjil 2026/2027  
+**Status Keseluruhan**: **100% SELESAI & TERVERIFIKASI (PEKAN 1 S/D 16)**  
 
 ---
 
-| Pekan | Topik / Fokus RPS | Status | Tanggal Eksekusi | Deliverables Utama |
+| Pekan | Topik / Fokus RPS | Status | Tanggal Eksekusi | Deliverables Utama & Hasil Pengujian |
 |:---:|---|:---:|:---:|---|
-| **1** | **Fondasi Proyek, SQA, dan V-Model** | **IN PROGRESS (Tahap Finalisasi)** | 2026-11-04 | Setup Stack, Auth/RBAC, WebGIS Leaflet DEMO, SQA Plan, SRS, V-Model, Initial Test Strategy, Smoke Test |
-| **2** | Test Plan dan Analisis Risiko | PLANNED | - | Test Plan terinci, Analisis Risiko Modul ERP & GIS |
-| **3** | Black-Box Testing: EP & BVA | PLANNED | - | Validasi Form bahan, BOM, produksi, Test Case Matrix EP/BVA |
-| **4** | Decision Table & State Transition | PLANNED | - | Decision table transaksi & status state transition |
-| **5** | White-Box Testing, CFG, & CC | PLANNED | - | Control Flow Graph & Cyclomatic Complexity rumus HPP |
-| **6** | API Testing & Integration Testing | PLANNED | - | Postman/Newman Collection, REST API Test Suite |
-| **7** | Automated E2E Testing & Defect Mgmt | PLANNED | - | Playwright E2E Script, Traceability Matrix, Defect Log |
-| **8** | UTS, Audit, dan Peer Review | PLANNED | - | Audit SQA, Perbaikan Defect Prioritas, Demo UTS |
-| **9** | Performance Testing (JMeter) | PLANNED | - | Load Testing 100-500 pengguna, Profiling Query WebGIS |
-| **10** | Security Testing (OWASP ZAP) | PLANNED | - | Penetration Testing, Remediasi Broken Access Control & XSS |
-| **11** | User Acceptance Testing (UAT) | PLANNED | - | UAT Scenario, Berita Acara UAT, User Feedback |
-| **12** | Strategi Implementasi Sistem | PLANNED | - | User Manual, Conversion Strategy, Change Management Plan |
-| **13** | ETL, Data Migration, Cutover, Rollback | PLANNED | - | Python Pandas ETL Script, Data Reconciliation, Rollback Plan |
-| **14** | CI/CD dan Deployment | PLANNED | - | GitHub Actions, Docker Staging Deployment, Nginx |
-| **15** | Post-Implementation Review & Maintenance | PLANNED | - | PIR Report, Preventive/Corrective Maintenance Plan |
-| **16** | UAS, Final Demo, & Rollback Simulation | PLANNED | - | Final Report, Complete Test Report, Live Demo 2 Alur Bisnis |
-
----
-
-## Log Aktivitas Pekan 1
-- Pemeriksaan lingkungan kerja (Node.js v24.20.0, npm 11.19.0, analisis kebutuhan PHP/Composer/PostgreSQL).
-- Pembuatan struktur direktori Modular Monolith (`app/Modules/`, `docs/`, `tests/`, dll.).
-- Pembuatan Master Project Prompt, Project Status, Weekly Progress, Changelog, README.
-- Pembuatan Skema Database & Migrations: Users (RBAC), Wilayah Pamekasan, Data UMKM (8 kategori), Tambak Garam (PostGIS Geometri).
-- Pembuatan Seeders: Akun Admin, UMKM Garam, UMKM Rengginang Ikan, Pimpinan, Data Wilayah Galis, Pademawu, Tlanakan, serta DEMO Spasial UMKM & Tambak.
-- Pembuatan Backend Controller, Service, Policy (isolasi data antar-UMKM).
-- Pembuatan Frontend Vue 3 + TypeScript + Inertia + Tailwind:
-  - Komponen Peta Interaktif Leaflet + OpenStreetMap + GeoJSON
-  - Dashboard EIS dengan grafik metrik
-  - Halaman Manajemen UMKM
-  - Halaman Login / Auth
-- Pembuatan Dokumen SQA Pekan 1 (SQA Plan, SRS, V-Model, Test Strategy, Risk Register, Test Cases, dan Execution Report).
-
+| **1** | **Fondasi Proyek, SQA, dan V-Model** | **COMPLETED** | 2026-11-04 | Arsitektur Modular Monolith, SRS, SQA Plan, V-Model Matrix, Smoke Test Suite (**29/29 PASS**) |
+| **2** | **Test Plan dan Analisis Risiko** | **COMPLETED** | 2026-11-16 | Master Test Plan ISO/IEC/IEEE 29119-3, Risk Analysis RPN (**16/16 PASS**) |
+| **3** | **Black-Box Testing: EP & BVA** | **COMPLETED** | 2026-11-16 | Validasi BVA Batas Pamekasan, Partisi EP Form, Resolusi Cacat DEF-001 s/d DEF-004 (**14/14 PASS**) |
+| **4** | **Decision Table & State Transition** | **COMPLETED** | 2026-11-16 | Decision Table Mutu Garam SNI 3556:2016, State Machine Batch Produksi (**10/10 PASS**) |
+| **5** | **White-Box Testing, CFG, & CC** | **COMPLETED** | 2026-11-16 | Control Flow Graph & Kompleksitas Siklomatis McCabe $V(G)=9$ Algoritma HPP (**9/9 PASS**) |
+| **6** | **API Testing & Integration Testing** | **COMPLETED** | 2026-11-16 | Postman Collection v2.1.0 & Newman CLI Runner (`GET /umkm`, `POST /login`, WebGIS) (**8/8 PASS**) |
+| **7** | **Automated E2E Testing & Defect Mgmt** | **COMPLETED** | 2026-11-16 | Playwright Automated E2E Suite, Defect Management Guide GitHub Issues (**7/7 PASS**) |
+| **8** | **UTS, Audit, dan Peer Review** | **COMPLETED** | 2026-11-16 | Evaluasi CPMK 2 (Bobot 25%), Audit 15 Dokumen Phase 1, Rekonsiliasi Defect (**23/23 PASS**) |
+| **9** | **Performance Testing (JMeter/k6)** | **COMPLETED** | 2026-11-16 | Load Test 500 requests, Throughput 791 req/s, Latensi 30ms, Error Rate 0.0% (**PASS**) |
+| **10** | **Security Testing (OWASP Top 10)** | **COMPLETED** | 2026-11-16 | Vulnerability Scan SQLi, Stored XSS, Broken Access Control, Cookie Proteksi (**5/5 PASS**) |
+| **11** | **User Acceptance Testing (UAT)** | **COMPLETED** | 2026-11-16 | Matriks Skenario UAT 7 User Journey & Berita Acara UAT Sign-Off Resmi (**5/5 PASS**) |
+| **12** | **Strategi Implementasi Sistem** | **COMPLETED** | 2026-11-16 | Strategi Phased Pilot Conversion Pademawu-Tlanakan, ADKAR Change Management (**5/5 PASS**) |
+| **13** | **ETL, Data Migration, Cutover, Rollback**| **COMPLETED** | 2026-11-16 | Skrip ETL Pembersih Data Legacy CSV, Cutover Checklist, Live Emergency Rollback (**10/10 PASS**) |
+| **14** | **CI/CD dan Deployment** | **COMPLETED** | 2026-11-16 | Workflow GitHub Actions `.github/workflows/ci-cd.yml`, Docker & Nginx Staging (**7/7 PASS**) |
+| **15** | **Post-Implementation Review & Maintenance**| **COMPLETED** | 2026-11-16 | Dokumen PIR, Pelajaran Dipetik (Lessons Learned), Matriks Anggaran Pemeliharaan (**5/5 PASS**) |
+| **16** | **UAS, Final Demo, & Rollback Simulation** | **COMPLETED** | 2026-11-16 | Master Regression Runner 15 Suite, Panduan Live Demo & Rollback UAS (**15/15 PASS, 100%)** |
