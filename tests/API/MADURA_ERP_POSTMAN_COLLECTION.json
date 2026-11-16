@@ -1,0 +1,166 @@
+{
+  "info": {
+    "_postman_id": "b3e0c7a1-8d21-4f12-9c31-maduraerp2026",
+    "name": "MADURA ERP/EIS - Suite Pengujian REST API (Pekan 6)",
+    "description": "Koleksi Postman resmi untuk Integration Testing & REST API Testing modul UMKM, Autentikasi, dan WebGIS SIGARA Pamekasan sesuai standar RPS MKB020204.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "API 1: Autentikasi Login Gmail Pribadi",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"elsa.madura@gmail.com\",\n  \"name\": \"Elsa Madura\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "login"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code 200 OK', function () { pm.response.to.have.status(200); });",
+              "pm.test('Login mengembalikan profil user yang valid', function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.success).to.eql(true);",
+              "    pm.expect(jsonData.user.email).to.eql('elsa.madura@gmail.com');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API 2: Mengambil Koleksi Direktori UMKM",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/umkm",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "umkm"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code 200 OK', function () { pm.response.to.have.status(200); });",
+              "pm.test('Payload berisi daftar UMKM terdaftar', function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.success).to.eql(true);",
+              "    pm.expect(jsonData.data).to.be.an('array');",
+              "    pm.expect(jsonData.count).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API 3: Pendaftaran UMKM Baru (Payload Valid)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"UD. Samudra Madura Mandiri\",\n  \"owner_name\": \"H. Ruslan\",\n  \"category\": \"olahan_ikan\",\n  \"products\": \"Ikan Bakar & Teri Crispy\",\n  \"scale\": \"Kecil\",\n  \"address\": \"Branta Pesisir\",\n  \"district_name\": \"Tlanakan\",\n  \"village_name\": \"Branta Pesisir\",\n  \"phone\": \"081299887766\",\n  \"latitude\": -7.2285,\n  \"longitude\": 113.4580,\n  \"capacity\": \"400 Kg/bulan\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/umkm",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "umkm"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code 201 Created', function () { pm.response.to.have.status(201); });",
+              "pm.test('Data tersimpan dengan kode identitas UMKM', function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.success).to.eql(true);",
+              "    pm.expect(jsonData.data.code).to.include('UMK-');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API 4: Pendaftaran Ditolak Jika Koordinat di Luar Pamekasan (BVA)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Toko Fiktif Jakarta\",\n  \"owner_name\": \"Budi\",\n  \"category\": \"olahan_ikan\",\n  \"phone\": \"081299887766\",\n  \"latitude\": -6.2088,\n  \"longitude\": 106.8456\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/umkm",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "umkm"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code 422 Unprocessable Entity', function () { pm.response.to.have.status(422); });",
+              "pm.test('Menampilkan rincian error batas koordinat Pamekasan', function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.success).to.eql(false);",
+              "    pm.expect(jsonData.errors.length).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "API 5: Logout Pengguna",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "{{baseUrl}}/api/v1/logout",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "v1", "logout"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code 200 OK', function () { pm.response.to.have.status(200); });",
+              "pm.test('Sesi berhasil direset', function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.success).to.eql(true);",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

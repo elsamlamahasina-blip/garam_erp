@@ -1,5 +1,28 @@
 [
   {
+    "id": 31,
+    "code": "UMK-OLH-031",
+    "name": "UD. Hasil Laut Segar Newman",
+    "owner_name": "Bapak Subhan",
+    "sector": "olahan_laut",
+    "category": "kerupuk_ikan",
+    "category_label": "Kerupuk Ikan Pesisir",
+    "products": "Kerupuk Ikan Tenggiri Khas Pademawu",
+    "scale": "Kecil",
+    "address": "Desa Majungan",
+    "district_name": "Pademawu",
+    "village_name": "Majungan",
+    "phone": "081234567890",
+    "latitude": -7.215,
+    "longitude": 113.528,
+    "established_year": 2026,
+    "production_capacity": "500 Kg/bulan",
+    "employee_count": 5,
+    "status": "aktif",
+    "is_demo": false,
+    "notes": "Didaftarkan melalui portal SIGARA-PAMEKASAN"
+  },
+  {
     "id": 30,
     "code": "UMK-OLH-030",
     "name": "UD. Hasil Laut Barokah",
